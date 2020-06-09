@@ -75,7 +75,7 @@
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
       if (!friend.friendFlag) {
-        if (confirm("You haven't added BOT as a friend. Need to add friend? ")){
+        if (confirm("You haven't added BOT as a friend. Need to add friend? ")) {
           window.location = "https://lin.ee/AeBKzVJ"
         }
       }
@@ -130,10 +130,13 @@
     async function main() {
       alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1653673606-mDAv8xL9" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      }
       // createUniversalLink()
     }
     main()
