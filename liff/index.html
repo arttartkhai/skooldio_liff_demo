@@ -78,10 +78,10 @@
 
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
-      liff.getElementById("language").append(liff.getLanguage())
-      liff.getElementById("version").append(liff.getVersion())
-      liff.getElementById("accessToken").append(liff.getAccessToken())
-      liff.getElementById("isInClient").append(liff.isInClient())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
       // check if user open in Line App or not
       if (liff.isInClient()) {
         document.getElementById("btnLogOut").style.display = "none"
